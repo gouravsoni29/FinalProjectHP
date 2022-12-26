@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BookhotelsComponent } from './pages/bookhotels/bookhotels.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
-  {path:'boothotel',component:BookhotelsComponent}
+  {path:'boothotel',component:BookhotelsComponent},
+  {path:'payment',component:PaymentComponent}
 ];
 
 @NgModule({
