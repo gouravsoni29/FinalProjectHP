@@ -1,12 +1,17 @@
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 .background {
-    background-image: url("../../../assets/b-1.jpg"); 
+    background-image: url("/assets/beautiful.jpg"); 
     background-color: #cccccc; 
-    height: 500px; 
+    height: 550px; 
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
   }
+  .pfont {
+    font-weight: bolder;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
   .last{
     width: 90%;
     height: 900px;

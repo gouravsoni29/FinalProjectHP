@@ -38,6 +38,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthInterceptor, authInterceptorProviders } from './services/auth.interceptor';
+import { SearchHotelComponent } from './pages/search-hotel/search-hotel.component';
+import { ViewHotelComponent } from './pages/view-hotel/view-hotel.component';
 
 
 @NgModule({
@@ -60,6 +62,8 @@ import { AuthInterceptor, authInterceptorProviders } from './services/auth.inter
        HomeuserComponent,
        ProfileComponent,
        PaymentComponent
+        SearchHotelComponent,
+        ViewHotelComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,40 @@
+<div class="jumbotron text-center jumbotron-fluid background">
+    <h1 class="version1"><button type="button" class="btn btn-danger">CLICK HERE TO SEE THE LIST OF HOTELS</button></h1>
+    
+    <form class="form-inline">
+        <div class="input-group">
+          <input type="text" class="form-control" size="100" placeholder="Enter Hotel name" required>
+        </div>
+      </form>
+  </div>
+
+  <div class="container">
+    <!-- <h1 style="text-align:center">BOOK YOUR HOTEL HERE!!!!!!</h1>
+<h3 style="margin-left: 30px;">Enter the City Here</h3> -->
+<!-- <input type="text" placeholder="City" class="form-control" [(ngModel)]="searchText" style="width: 250px;margin-left: 30px;" name="city"><br> -->
+<!-- <input type="text" placeholder="City" class="form-control" style="width: 250px;margin-left: 30px;" name="city"><br>
+<button class="btn btn-info" style="margin-left: 30px;">Search</button> -->
+<div class="container p-5">
+<table class="table table-striped">
+    <thead>
+        <td>
+            ID
+        </td>
+        <td>CITY</td>
+        <td>HOTEL</td>
+        <td>Ratings</td>
+    </thead>
+    <tbody>
+        <!-- <tr *ngFor="let e of details | search:searchText"> -->
+          <tr>
+            <td>1</td>
+            <td>Dhanbad</td>
+            <td>Redision Blue</td>
+            <td><button (click)="bookHotel()" class="btn btn-info">BOOK</button></td>
+            <td><button (click)="viewDetails()" class="btn btn-info">View Details</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+  </div>
