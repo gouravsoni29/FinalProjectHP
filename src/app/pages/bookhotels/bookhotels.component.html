@@ -1,1 +1,63 @@
-<h1>This is booking Page</h1>
+
+<div class="login-page">
+    <figure></figure>
+    <figure></figure>
+    <figure></figure>
+
+    <mat-card class="mat-elevation-z12">
+        <mat-card-title style="text-align:center;"><b>BOOK HOTEL</b></mat-card-title>
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+            <mat-tab label="HOTEL" class="registration-tab">
+                <mat-card-content>
+                    <!-- {{userModel | json}} -->
+                    <form #userForm="ngForm">
+                        <mat-form-field>
+                            <input matInput placeholder="User Name" required name="username">
+                            <mat-icon matSuffix>perm_identity</mat-icon>
+                            <!-- <mat-error *ngIf="firstname.invalid">
+                  First Name is required
+                </mat-error> -->
+                        </mat-form-field>
+                        
+                        <mat-form-field>
+                            <input matInput placeholder="Hotel Name" required name="hotelname">
+                            <mat-icon matSuffix>perm_identity</mat-icon>
+                            <!-- <mat-error *ngIf="lastname.invalid">
+                  Last Name is required
+                </mat-error> -->
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="City" required name="city">
+                            <mat-icon matSuffix>perm_identity</mat-icon>
+                            <!-- <mat-error *ngIf="firstname.invalid">
+                  First Name is required
+                </mat-error> -->
+                        
+                        <!-- <mat-form-field>
+                <input matInput placeholder="Address" required name="address" ngModel #address="ngModel">
+                <mat-icon matSuffix>home</mat-icon>
+                <mat-error *ngIf="address.invalid">
+                  Address is required</mat-error>
+              </mat-form-field> -->
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="CheckIn Date" type="date" required minlength="6"
+                    name="checkdate" ngModel #repassword="ngModel">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="CheckOut Date" type="date" required minlength=""
+                    name="cdate" ngModel #repassword="ngModel">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Price" type="number" required minlength=""
+                    name="price" ngModel #repassword="ngModel">
+            </mat-form-field>
+                        <button mat-raised-button color="primary" class="login-button">
+                            Sign Up
+                        </button>
+                    </form>
+                </mat-card-content>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div>

@@ -1,0 +1,60 @@
+<!-- <mat-card *ngIf="user"> -->
+    <mat-card>
+    <h1>Your Profile Details</h1>
+    <!-- {{ user | json }} -->
+    <mat-card-content>
+      <div class="bootstrap-wrapper">
+        <div class="container">
+          <div class="container text-center">
+            <img
+              src="https://t4.ftcdn.net/jpg/03/46/93/61/360_F_346936114_RaxE6OQogebgAWTalE1myseY1Hbb5qPM.jpg"
+              alt=""
+              class="profile-image"
+            />
+  
+            <!-- <h1 class="mt20">{{ user.firstName }} {{ user.lastName }}</h1> -->
+            <h1 class="mt20">Admin</h1>
+
+          </div>
+  
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <!-- //table Details  -->
+              <table class="table text-center">
+                <tr>
+                  <td>Username</td>
+                  <!-- <td>{{ user.username }}</td> -->
+                  <td>admin</td>
+                </tr>
+                <tr>
+                  <td>Userid</td>
+                  <td>23</td>
+                </tr>
+                <tr>
+                  <td>Phone</td>
+                  <!-- <td>{{ user.phone }}</td> -->
+                  <td>8i78567675</td>
+                </tr>
+                <tr>
+                  <td>Role</td>
+                  <!-- <td>{{ user.authorities[0].authority }}</td> -->
+                  <td>Admin</td>
+
+                </tr>
+                <tr>
+                  <td>Status</td>
+                  <!-- <td>{{ user.enabled ? "ACTIVE" : "NOTACTIVE" }}</td> -->
+                  <td>Active</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+      <button mat-raised-button color="primary">UPDATE</button>
+      <button mat-raised-button color="danger">DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+  

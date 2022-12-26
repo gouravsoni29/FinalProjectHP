@@ -1,4 +1,4 @@
-.login-page {
+.payment-page {
     top: 0;
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@
     padding: 0%;
   }
   
-  .login-page > figure {
+  .payment-page > figure {
     animation: imageAnimation 30s linear infinite 0s;
     backface-visibility: hidden;
     background-size: cover;
@@ -32,13 +32,13 @@
     z-index: 0;
     overflow: hidden;
   }
-  .login-page > figure:nth-child(1) { background-image: url('../../../assets/img/b410.jpg'); 
+  .payment-page > figure:nth-child(1) { background-image: url('../../../assets/img/b410.jpg'); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
   }
   
-  .login-page > figure:nth-child(2) {
+  .payment-page > figure:nth-child(2) {
   animation-delay: 6s;
   background-image: url('../../../assets/img/b40.jpg');
   background-position: center;
@@ -47,7 +47,7 @@
   
   }
   
-  .login-page > figure:nth-child(3) {
+  .payment-page > figure:nth-child(3) {
   animation-delay: 12s;
   background-image: url('../../../assets/img/b46.jpg');
   background-position: center;
@@ -76,7 +76,7 @@
   
     
     mat-card {
-      width: 40%;
+      width: 35%;
       margin: 2% auto;
       border-radius: 8px;
     }
@@ -98,5 +98,3 @@
     .registration-tab{
       margin-bottom: 20%;
     }
-   
-  
