@@ -18,9 +18,12 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" routerLink="boothotel">Book Hotels</a>
+            <a class="nav-link" routerLink="/bookhotel">Book Hotels</a>
           </li>
-          
+          <li class="nav-item">
+            <a (click)="logout()"
+            *ngIf="isLoggedIn" class="nav-link" href="#">Logout</a>
+          </li>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

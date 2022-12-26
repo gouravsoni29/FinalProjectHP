@@ -7,6 +7,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+// import { MatSidenavModule } from '@angular/material/sidenav';
+// import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+// import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +28,16 @@ import { FormsModule } from '@angular/forms';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PackagesComponent } from './pages/packages/packages.component';
 import { BookhotelsComponent } from './pages/bookhotels/bookhotels.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { AdminhomeComponent } from './pages/admin/adminhome/adminhome.component';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { SidebarUserComponent } from './pages/user/sidebar-user/sidebar-user.component';
+import { HomeuserComponent } from './pages/user/homeuser/homeuser.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AuthInterceptor, authInterceptorProviders } from './services/auth.interceptor';
 
 
 @NgModule({
@@ -33,11 +51,20 @@ import { BookhotelsComponent } from './pages/bookhotels/bookhotels.component';
     ContactComponent,
     PackagesComponent,
   
-    BookhotelsComponent
+    BookhotelsComponent,
+       DashboardComponent,
+       AdminhomeComponent,
+       SidebarComponent,
+       UserDashboardComponent,
+       SidebarUserComponent,
+       HomeuserComponent,
+       ProfileComponent,
+       PaymentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     MatButtonModule,
@@ -46,9 +73,15 @@ import { BookhotelsComponent } from './pages/bookhotels/bookhotels.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatListModule,
+    MatDividerModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
