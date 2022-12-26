@@ -21,6 +21,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { PackagesComponent } from './pages/packages/packages.component';
 import { BookhotelsComponent } from './pages/bookhotels/bookhotels.component';
 import { PaymentComponent } from './pages/payment/payment.component';
+import { HotelcardComponent } from './pages/hotelcard/hotelcard.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { PaymentComponent } from './pages/payment/payment.component';
     PackagesComponent,
   
     BookhotelsComponent,
-        PaymentComponent
+        PaymentComponent,
+        HotelcardComponent
   ],
   imports: [
     BrowserModule,
