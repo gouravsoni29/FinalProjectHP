@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PackagesComponent } from './pages/packages/packages.component';
 import { BookhotelsComponent } from './pages/bookhotels/bookhotels.component';
+import { HotelComponent } from './pages/hotel/hotel.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { BookhotelsComponent } from './pages/bookhotels/bookhotels.component';
     ContactComponent,
     PackagesComponent,
   
-    BookhotelsComponent
+    BookhotelsComponent,
+        HotelComponent
   ],
   imports: [
     BrowserModule,
