@@ -1,0 +1,17 @@
+.background {
+    background-image:  url("/assets/R.jpg");/* #350e03; /* Orange */
+    color: #ffffff;
+    height: 300px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+  }
+  .form-control{
+    margin-left: 200px;
+  }
+  
+  .version1 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    font-weight:bolder
+  }
