@@ -1,37 +1,33 @@
 <div class="jumbotron text-center jumbotron-fluid background">
-    <h1 class="version1"><button type="button" class="btn btn-danger">CLICK HERE TO SEE THE LIST OF HOTELS</button></h1>
+    <h1 class="version1"><button type="button" (click)=" getAllHotel()" class="btn btn-danger">CLICK HERE TO SEE THE LIST OF HOTELS</button></h1>
     
-    <form class="form-inline">
+    <!-- <form class="form-inline"> -->
         <div class="input-group">
-          <input type="text" class="form-control" size="100" placeholder="Enter Hotel name" required>
+          <input type="text" class="form-control" size="100" [(ngModel)]="searchText" placeholder="Enter Hotel name,City Name" required>
         </div>
-      </form>
+      <!-- </form> -->
   </div>
 
   <div class="container">
-    <!-- <h1 style="text-align:center">BOOK YOUR HOTEL HERE!!!!!!</h1>
-<h3 style="margin-left: 30px;">Enter the City Here</h3> -->
-<!-- <input type="text" placeholder="City" class="form-control" [(ngModel)]="searchText" style="width: 250px;margin-left: 30px;" name="city"><br> -->
-<!-- <input type="text" placeholder="City" class="form-control" style="width: 250px;margin-left: 30px;" name="city"><br>
-<button class="btn btn-info" style="margin-left: 30px;">Search</button> -->
+   
 <div class="container p-5">
-<table class="table table-striped">
+<table class="table table-striped table-dark">
     <thead>
-        <td>
-            ID
-        </td>
+       
         <td>CITY</td>
+        <td>HOTEL</td>
         <td>HOTEL</td>
         <td>Ratings</td>
     </thead>
     <tbody>
-        <!-- <tr *ngFor="let e of details | search:searchText"> -->
-          <tr>
-            <td>1</td>
-            <td>Dhanbad</td>
-            <td>Redision Blue</td>
-            <td><button (click)="bookHotel()" class="btn btn-info">BOOK</button></td>
-            <td><button (click)="viewDetails()" class="btn btn-info">View Details</button></td>
+        
+          <tr *ngFor="let item of hotel | search:searchText">
+           
+            <td>{{item.city}}</td>
+            <td>{{item.hotelName}}</td>
+            <td>{{item.ratings}}</td>
+            <td><button (click)="bookHotel(item.id)" class="btn btn-danger">BOOK</button></td>
+            <td><button (click)="viewDetails(item.id)" class="btn btn-success">View Details</button></td>
         </tr>
     </tbody>
 </table>

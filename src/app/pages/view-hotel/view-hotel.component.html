@@ -9,8 +9,8 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="thumbnail">
-            <b>The Oberoi</b>
+        <div class="thumbnail" >
+            <b>{{hotel.hotelName}} , {{hotel.city}}</b>
             <br><span class = "fa fa-star checked"></span> 
             <span class = "fa fa-star checked"></span>
             <span class = "fa fa-star checked"></span>
@@ -35,9 +35,9 @@
       </div>
       <div class="col-md-3">
         <div class="thumbnail">
-            <b>Rs.4000 per night</b><br><br>
+            <b>Rs.{{hotel.price}} per night</b><br><br>
             Get AC/Non AC Rooms,Make Your Stay Comfortable With Us<br><br>
-            <button class="btn btn-success">BOOK HOTEL</button>
+            <button class="btn btn-success" (click)="search()">Back to previous page</button>
           <!-- <a href="/assets/2017.jpg" target="_blank"> -->
             <!-- <img src="/assets/a48.jpg" alt="Fjords" style="width:100%"> -->
             <!-- <div class="caption">

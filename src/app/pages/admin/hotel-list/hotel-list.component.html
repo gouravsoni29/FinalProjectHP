@@ -1,0 +1,33 @@
+
+<div class="container mt-2">
+    <h2 class="text-center">Hotel Details</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Hotel Id</th>
+        <th scope="col">Hotel Name</th>
+        <th scope="col">City</th>
+        <th scope="col">Price</th>
+        <th scope="col">Ratings</th>
+        <th scope="col">Actions</th>
+        
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let item of hotel">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.hotelName}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.ratings}}</td>
+        <td><button (click)="deleteHotel(item.id)"   class="btn btn-danger">DELETE</button></td>
+       
+      </tr>
+      
+    </tbody>
+  </table>
+  <div>
+    <button type="submit" class="btn btn-success" (click)="addhotel()">ADD HOTELS</button>
+  </div>
+
+</div>

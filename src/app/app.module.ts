@@ -10,7 +10,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 // import { MatSidenavModule } from '@angular/material/sidenav';
-// import { MatToolbarModule } from '@angular/material/toolbar';
+
 import { MatMenuModule } from '@angular/material/menu';
 // import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
@@ -40,6 +40,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthInterceptor, authInterceptorProviders } from './services/auth.interceptor';
 import { SearchHotelComponent } from './pages/search-hotel/search-hotel.component';
 import { ViewHotelComponent } from './pages/view-hotel/view-hotel.component';
+import { BooklistComponent } from './pages/admin/booklist/booklist.component';
+import { HotelListComponent } from './pages/admin/hotel-list/hotel-list.component';
+import { UserListComponent } from './pages/admin/user-list/user-list.component';
+import { FeedListComponent } from './pages/admin/feed-list/feed-list.component';
+import { SearchPipe } from './services/search.pipe';
+import { AddHotelComponent } from './pages/admin/add-hotel/add-hotel.component';
+import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
+import { BookHistoryComponent } from './pages/user/book-history/book-history.component';
+import { PaymentHistoryComponent } from './pages/user/payment-history/payment-history.component';
 
 
 @NgModule({
@@ -61,9 +70,18 @@ import { ViewHotelComponent } from './pages/view-hotel/view-hotel.component';
        SidebarUserComponent,
        HomeuserComponent,
        ProfileComponent,
-       PaymentComponent
+       PaymentComponent,
         SearchHotelComponent,
-        ViewHotelComponent
+        ViewHotelComponent,
+        BooklistComponent,
+        HotelListComponent,
+        UserListComponent,
+        FeedListComponent,
+        SearchPipe,
+        AddHotelComponent,
+        UpdateProfileComponent,
+        BookHistoryComponent,
+        PaymentHistoryComponent
   ],
   imports: [
     BrowserModule,

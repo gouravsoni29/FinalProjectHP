@@ -13,38 +13,38 @@
             />
   
             <!-- <h1 class="mt20">{{ user.firstName }} {{ user.lastName }}</h1> -->
-            <h1 class="mt20">Admin</h1>
+            <h1 class="mt20">{{user.firstName}}  {{user.lastName}}</h1>
 
           </div>
   
           <div class="row">
             <div class="col-md-10 offset-md-1">
               <!-- //table Details  -->
-              <table class="table text-center">
+              <table class="table text-center table-info">
                 <tr>
                   <td>Username</td>
                   <!-- <td>{{ user.username }}</td> -->
-                  <td>admin</td>
+                  <td>{{user.username}}</td>
                 </tr>
                 <tr>
                   <td>Userid</td>
-                  <td>23</td>
+                  <td>{{user.id}}</td>
                 </tr>
                 <tr>
                   <td>Phone</td>
                   <!-- <td>{{ user.phone }}</td> -->
-                  <td>8i78567675</td>
+                  <td>{{user.phone}}</td>
                 </tr>
                 <tr>
                   <td>Role</td>
                   <!-- <td>{{ user.authorities[0].authority }}</td> -->
-                  <td>Admin</td>
+                  <td>{{ user.authorities[0].authority }}</td>
 
                 </tr>
                 <tr>
                   <td>Status</td>
                   <!-- <td>{{ user.enabled ? "ACTIVE" : "NOTACTIVE" }}</td> -->
-                  <td>Active</td>
+                  <td>{{ user.enabled ? "ACTIVE" : "NOTACTIVE" }}</td>
                 </tr>
               </table>
             </div>
@@ -53,8 +53,8 @@
       </div>
     </mat-card-content>
     <mat-card-actions class="text-center">
-      <button mat-raised-button color="primary">UPDATE</button>
-      <button mat-raised-button color="danger">DELETE</button>
+      <button (click)="updateuser(user.id)" mat-raised-button color="primary">UPDATE</button>
+      <button mat-raised-button color="info">DELETE</button>
     </mat-card-actions>
   </mat-card>
   

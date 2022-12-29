@@ -1,0 +1,32 @@
+
+<div class="container mt-2">
+    <h2 class="text-center">Booking Details</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Booking Id</th>
+        <th scope="col">Check In Date</th>
+        <th scope="col">Check Out Date</th>
+        <!-- <th scope="col">Price</th> -->
+        <th scope="col">Status</th>
+        
+      </tr>
+    </thead>
+    <tbody class="table-group-divider" *ngFor="let item of book">
+      <tr *ngIf="item.username==this.username1">
+       
+
+        <th scope="row">{{item.bookingId}}</th>
+        <td>{{item.checkinDate}}</td>
+        <td>{{item.checkoutDate}}</td>
+        <!-- <td>{{item.price}}</td> -->
+        <td>{{item.status}}</td>
+        
+        <td><button (click)="cancelBooking(item.bookingId)"  class="btn btn-success">Cancel</button></td>
+        
+      </tr>
+    
+      
+    </tbody>
+  </table>
+</div>

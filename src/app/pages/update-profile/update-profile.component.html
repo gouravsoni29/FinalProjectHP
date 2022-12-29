@@ -1,0 +1,55 @@
+<div class="container mt-3">
+    <div class="col-md-6 offset-md-3">
+
+        <h1 class="text-center">Update Your Profile</h1>
+
+        <form (ngSubmit)="updateUser()">
+
+             <div class="form-group">
+
+                <label>First Name</label>
+
+                <input type="text" class="form-control" id="firstname" [(ngModel)]="user.firstName" name="firstname">
+
+            </div> 
+            <div class="form-group">
+
+                <label>Last Name</label>
+
+                <input type="text" class="form-control" id="lastname" [(ngModel)]="user.lastName" name="lastname">
+
+            </div> 
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input type="text" class="form-control" id="email" [(ngModel)]="user.email" name="email">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Phone Number</label>
+
+                <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone">
+
+            </div>
+
+            <br>
+
+            <button class="btn btn-success" type="submit">Submit</button>
+
+        </form>
+
+    </div>
+</div>
+
+<!-- id?:number;
+-username?:String;
+password?:String;
+-firstName?:String;
+-lastName?:String;
+-email?:String;
+-phone?:String;
+enabled?:boolean;
+profile?:String; -->

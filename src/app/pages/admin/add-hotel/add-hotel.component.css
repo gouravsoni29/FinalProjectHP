@@ -1,0 +1,10 @@
+.form-group{
+    margin: auto;
+    width: 60%;
+    margin-top: 10px;
+}
+.add{
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}

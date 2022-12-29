@@ -1,28 +1,28 @@
 <div class="container my-5 ">
-    <h1 class="display-4  text-center">Contact Us</h1>
+    <h1 class="display-4  text-center mt-4">Contact Us</h1>
     <p class="text-center" ></p>
-    <form #contactForm="ngForm">
+    <form #contactForm="ngForm" (ngSubmit)=" addContact()">
         <div class="row py-5">
             <div class="col-md-6">
 
                 <div class="form-group">
-                    <input type="text" class="form-control"  name="firstname" placeholder="First name" required>
+                    <input type="text" class="form-control"  name="firstname" placeholder="First name" [(ngModel)]="contact.firstName" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control"  name="lastname" placeholder="Last name" required>
+                    <input type="text" class="form-control"  name="lastname" placeholder="Last name" [(ngModel)]="contact.lastName" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control"  name="email" placeholder="Email" required>
+                    <input type="email" class="form-control"  name="email" placeholder="Email" [(ngModel)]="contact.email" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control"  name="phone" placeholder="Phone" required>
+                    <input type="text" class="form-control"  name="phone" placeholder="Phone" [(ngModel)]="contact.phoneno" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <textarea class="form-control" name="message"  placeholder="Message" rows="5" required></textarea>
+                    <textarea class="form-control" name="message"  placeholder="Message" rows="5" [(ngModel)]="contact.message" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-danger">Submit</button>
             </div>
         </div>
 

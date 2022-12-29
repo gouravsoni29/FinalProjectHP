@@ -6,24 +6,24 @@
     <mat-card class="mat-elevation-z12">
         <mat-card-title style="text-align:center;">Payment</mat-card-title>
         <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
-            <mat-tab label="Amount to pay Rs.5000">
+            <mat-tab label="Pay the Amount">
                 <mat-card-content>
-              
-                    <form>
+
+                    <form (ngSubmit)="doPayment()">
                         <mat-form-field>
-                            <input matInput placeholder="Card No" name="Card No" required>
-                            <mat-icon matSuffix></mat-icon>
+                            <input matInput placeholder="Card No" name="Card No" required maxlength="16" minlength="16">
+                            <mat-icon matSuffix>credit_card</mat-icon>
                         </mat-form-field>
                         <mat-form-field>
-                            <input matInput placeholder="CVV" type="number" minlength="3" name="CVV"
-                                required>
+                            <input matInput placeholder="CVV" type="password" minlength="3" name="CVV" required maxlength="3" [minLength]="3">
                             <mat-icon matSuffix>lock</mat-icon>
                         </mat-form-field>
                         <mat-form-field>
-                            <input matInput placeholder="Date" type="date" name="Expirydate" required>
+                            <input matInput placeholder="Date" type="date" [value]="currentD" name="date" required
+                                [(ngModel)]="payment.paymentDate">
                         </mat-form-field>
-                        <mat-checkbox>Remember Me!</mat-checkbox>
-                        <button mat-raised-button color="primary" class="payment-button">
+                        <mat-checkbox required>Remember Me!</mat-checkbox>
+                        <button mat-raised-button color="primary" class="payment-button" type="submit">
                             Pay
                         </button>
 

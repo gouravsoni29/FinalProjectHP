@@ -10,10 +10,8 @@ export class HeaderComponent implements OnInit {
 
  
   isLoggedIn = false;
-  user = null;
-  user1=null;
-  seller1=false;
-  customer1=false;
+  user:any = null;
+  
 
   constructor(public login: LoginService) {}
 
@@ -23,13 +21,8 @@ export class HeaderComponent implements OnInit {
     this.login.loginStatusSubject.asObservable().subscribe((data) => {
       this.isLoggedIn = this.login.isLoggedIn();
       this.user = this.login.getUser();
-      this.user1=this.login.getUserRole();
-      if(this.user1=='ADMIN'){
-        this.seller1=true;
-      }
-      if(this.user1=='NORMAL'){
-        this.seller1=true;
-      }
+      // this.user1=this.login.getUserRole();
+    
     });
   }
 

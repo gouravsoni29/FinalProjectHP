@@ -1,0 +1,20 @@
+<div class="container mt-3">
+    <h1 class="text-center"><b>ADD HOTEL</b></h1>
+    <form (ngSubmit)="savehotel()">
+        <div class="form-group">
+            <input type="text" class="form-control" name="hotelName" placeholder="Enter Hotel Name" [(ngModel)]="hotel.hotelName" required>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="city" placeholder="Enter City Name" [(ngModel)]="hotel.city" required>
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" name="price" placeholder="Enter Price" [(ngModel)]="hotel.price" required >
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="ratings" placeholder="Enter Ratings" [(ngModel)]="hotel.ratings" required>
+        </div>
+        <div class="add mt-3">
+            <button type="submit" class="btn btn-primary">ADD</button>
+        </div>
+    </form>
+</div>

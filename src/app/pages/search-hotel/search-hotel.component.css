@@ -6,8 +6,9 @@
     background-repeat: no-repeat; 
     background-size: cover;
   }
-  .form-control{
-    margin-left: 200px;
+  .input-group{
+    margin:auto;
+    width: 50%;
   }
   
   .version1 {
