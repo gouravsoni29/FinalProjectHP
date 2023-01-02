@@ -1,13 +1,10 @@
 package com.hotel.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -22,24 +19,44 @@ public class Book {
 	private String checkinDate;
 	private String checkoutDate;
 	private Integer status;
+	private String username;
+	private long person;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
-	private User user;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "hotel_id", referencedColumnName = "hotel_id")
-	private Hotel hotel;
+//	
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
+//	private User user;
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "hotel_id", referencedColumnName = "hotel_id")
+//	private Hotel hotel;
+//	
+//@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "Book")
+//@JoinColumn(name = "payment_id", referencedColumnName = "bookingId")
+//private Payment payment;
+////	
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "payment_id", referencedColumnName = "payment_id")
-	private Payment payment;
 	
-	
-	
+
+	public long getPerson() {
+		return person;
+	}
+
+	public void setPerson(long person) {
+		this.person = person;
+	}
+
 	public Book() {
 		super();
 	}
 	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	public Long getBookingId() {
 		return bookingId;
 	}
@@ -74,23 +91,23 @@ public class Book {
 		this.status = status;
 	}
 
-	public User getUser() {
-		return user;
-	}
+//	public User getUser() {
+//		return user;
+//	}
+//
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
 
-
-
-	public Payment getPayment() {
-		return payment;
-	}
-
-	public void setPayment(Payment payment) {
-		this.payment = payment;
-	}
+////
+//	public Payment getPayment() {
+//		return payment;
+//	}
+//
+//	public void setPayment(Payment payment) {
+//		this.payment = payment;
+//	}
 
 
 	

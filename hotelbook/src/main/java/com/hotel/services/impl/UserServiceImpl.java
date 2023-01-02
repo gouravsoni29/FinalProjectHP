@@ -1,22 +1,21 @@
 package com.hotel.services.impl;
 
 
-import java.util.List;
+import java.io.UnsupportedEncodingException;
 import java.util.Set;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import com.hotel.dataclass.BookingData;
 import com.hotel.exception.UserFoundException;
-import com.hotel.model.Book;
-import com.hotel.model.Contact;
-import com.hotel.model.Payment;
 import com.hotel.model.User;
 import com.hotel.model.UserRole;
-import com.hotel.repo.BookingRepo;
-import com.hotel.repo.ContactRepo;
-import com.hotel.repo.PaymentRepo;
 import com.hotel.repo.RoleRepository;
 import com.hotel.repo.UserRepository;
 import com.hotel.services.UserService;
@@ -32,20 +31,16 @@ public class UserServiceImpl implements UserService {
     private RoleRepository roleRepository;
     
     @Autowired
-    private BookingRepo bookingRepo;
+    private JavaMailSender javaMailSender;
     
-    @Autowired
-    private ContactRepo contactRepo;
-    
-    @Autowired
-    private PaymentRepo paymentRepo;
-    
+   
+    @Lazy
    @Autowired
    private UserService userService;
 
     //creating user
     @Override
-    public User createUser(User user, Set<UserRole> userRoles) throws Exception {
+    public User createUser(User user, Set<UserRole> userRoles) throws Exception,UnsupportedEncodingException, MessagingException {
 
 
         User local = this.userRepository.findByUsername(user.getUsername());
@@ -60,6 +55,7 @@ public class UserServiceImpl implements UserService {
 
             user.getUserRoles().addAll(userRoles);
             local = this.userRepository.save(user);
+            sendEmail(user);
 
         }
 
@@ -78,51 +74,56 @@ public class UserServiceImpl implements UserService {
     }
 
 	@Override
-	public User fetchUserbyEmail(String email) {
+	public User fetchUserByUserName(String username) {
 		// TODO Auto-generated method stub
-		return this.userService.fetchUserbyEmail(email);
+		return userRepository.findByUsername(username);
 	}
 
 	@Override
-	public Contact saveContactus(Contact contact) {
+	public void sendEmail(User user) throws MessagingException, UnsupportedEncodingException {
 		// TODO Auto-generated method stub
-		return this.contactRepo.save(contact);
+		String to=user.getEmail();
+		String from = "gourav8296@gmail.com";
+		String senderName="Gourav";
+		String subject="Registration Success";
+		String content="<b>Dear [[name]]</b>,<br>"
+				+"<h3>Thank you for registration</h3><br>"
+				+"<h3>Please Note your details<h3><br>"
+				+"<b>Name</b> : [[f]] [[l]] <br>"
+				+ "<b>Email : [[e]]<br>"
+				+"Thank You <br>"
+				+"<h4>Plan4Holiday</h4>";
+		
+		MimeMessage message =javaMailSender.createMimeMessage();
+		 MimeMessageHelper helper = new MimeMessageHelper(message);
+	     
+		    helper.setFrom(from, senderName);
+		    helper.setTo(to);
+		    helper.setSubject(subject);
+		content =content.replace("[[name]]",user.getUsername());
+		content=content.replace("[[f]]", user.getFirstName());
+		content=content.replace("[[l]]", user.getLastName());
+		content=content.replace("[[e]]", user.getEmail());
+		 helper.setText(content, true);
+		javaMailSender.send(message);
+		
+		
 	}
 
-	@Override
-	public Book saveBook(BookingData bd) {
-		// TODO Auto-generated method stub
-		
-		Book b1=new Book();
-//		b1.setCheckinDate(bd.getCheckinDate());
-//		b1.setCheckoutDate(bd.getCheckoutDate());
-		b1.setStatus(1);
-		
-		Book b2=bookingRepo.save(b1);
-		Payment payment=new Payment(bd.getPaymentDate(),bd.getPaymentTime());
-		payment=paymentRepo.save(payment);
-		
-		User user=userRepository.findByUserId(bd.getUserId());
-		
-		b2.setUser(user);
-		b2.setPayment(payment);
-		
-		return bookingRepo.save(b2);
-	}
 
-	@Override
-	public List<Book> fetchBookingHistory(Long user_id) {
-		// TODO Auto-generated method stub
-		return bookingRepo.findBookingHistory(user_id);
-	}
 
-	@Override
-	public List<Book> cancelBooking(Long booking_id) {
-		// TODO Auto-generated method stub
-		Book b1=bookingRepo.findByBookingId(booking_id);
-		b1.setStatus(0);
-		return bookingRepo.findBookingHistory(b1.getUser().getId());
-	}
+
+
+
+
+
+//	@Override
+//	public List<Book> cancelBooking(Long booking_id) {
+//		// TODO Auto-generated method stub
+//		Book b1=bookingRepo.findByBookingId(booking_id);
+//		b1.setStatus(0);
+//		return bookingRepo.findBookingHistory(b1.getUser().getId());
+//	}
 
 	
     

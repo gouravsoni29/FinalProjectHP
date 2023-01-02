@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.hotel.exception.UserFoundException;
@@ -18,6 +19,7 @@ import com.hotel.services.UserService;
 @SpringBootApplication
 public class HotelbookApplication implements CommandLineRunner {
 
+	@Lazy
 	@Autowired
 	private UserService userService;
 
@@ -42,6 +44,7 @@ public class HotelbookApplication implements CommandLineRunner {
 		            user.setPassword(this.bCryptPasswordEncoder.encode("1234"));
 		            user.setEmail("admin@gmail.com");
 		            user.setProfile("default.png");
+		            user.setPhone("9988765765");
 
 		            Role role1 = new Role();
 		            role1.setRoleId(44L);
