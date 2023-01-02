@@ -5,5 +5,6 @@ export class Book{
     status?:number;
     price?:number;
     username?:string;
+    person?:number;
 
 }

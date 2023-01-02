@@ -1,38 +1,47 @@
-
 <div class="login-page">
     <figure></figure>
     <figure></figure>
     <figure></figure>
 
     <mat-card class="mat-elevation-z12">
-        
+
         <mat-card-title style="text-align:center;"><b>BOOK HOTEL</b></mat-card-title>
         <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
             <mat-tab label="{{hotel.hotelName}} , {{hotel.city}}, Rs.{{hotel.price}} " class="registration-tab">
                 <mat-card-content>
                     <!-- {{userModel | json}} -->
                     <form #userForm="ngForm" (ngSubmit)="booking()">
-                        <!-- <mat-form-field>
-                            <input matInput placeholder="User Name" [(ngModel)]="book.username" required name="username">
-                            <mat-icon matSuffix>perm_identity</mat-icon>
-                           
-                        </mat-form-field> -->
-                        
-                      
-              <mat-form-field>
-                <input matInput placeholder="CheckIn Date" type="date" [(ngModel)]="book.checkinDate" required minlength="6"
-                    name="checkindate" ngModel>
-                    
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="CheckOut Date" type="date" [(ngModel)]="book.checkoutDate" required minlength=""
-                    name="cdate" ngModel #repassword="ngModel">
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="{{hotel.price}}" type="number" required minlength="" [(ngModel)]="book.price" [value]="hotel.price"
-                    name="price" ngModel #repassword="ngModel" disabled>
-                    <mat-icon matSuffix>payment</mat-icon>
-            </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="No of Persons" type="number" [(ngModel)]="book.person" required
+                                maxlength="1" name="person" ngModel>
+
+                        </mat-form-field>
+
+
+                        <mat-form-field >
+                            <!-- <mat-label>Choose an option</mat-label> -->
+                            <mat-select placeholder="Room Type">
+                              <mat-option value="1">AC</mat-option>
+                              <mat-option value="2" >Non-AC</mat-option>
+                            
+                            </mat-select>
+                          </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput placeholder="CheckIn Date" type="date" [(ngModel)]="book.checkinDate"
+                                required minlength="6" name="checkindate" ngModel>
+
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="CheckOut Date" type="date" [(ngModel)]="book.checkoutDate"
+                                required minlength="" name="cdate" ngModel #repassword="ngModel">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="{{hotel.price}}" type="number" required minlength=""
+                                [(ngModel)]="book.price" [value]="hotel.price" name="price" ngModel
+                                #repassword="ngModel" disabled>
+                            <mat-icon matSuffix>payment</mat-icon>
+                        </mat-form-field>
                         <button mat-raised-button color="primary" class="login-button">
                             Book
                         </button>

@@ -6,6 +6,7 @@ import { LoginService } from 'src/app/services/login.service';
 import { Payment } from 'src/app/services/payment';
 import { PaymentService } from 'src/app/services/payment.service';
 import Swal from 'sweetalert2';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class PaymentComponent implements OnInit {
   hotel!:Hotel;
   id?:number
 
-  constructor(private loginService: LoginService, private paymentService: PaymentService,private router:Router,private hotelService:HotelService,private route:ActivatedRoute) {
+  constructor(private loginService: LoginService, private paymentService: PaymentService,private router:Router,private hotelService:HotelService,private route:ActivatedRoute,private snack:MatSnackBar) {
     this.username = this.loginService.getUser().username;
     // let currentDate=this.datepipe.transform((new Date),'MM/dd/yyy h:mm:ss')
     console.log(this.username);
@@ -38,12 +39,20 @@ export class PaymentComponent implements OnInit {
 
   }
   doPayment(){
+    if(this.payment.paymentDate=='' || this.payment.paymentDate==null ){
+      this.snack.open('Please Fill the details !! ', '', {
+        duration: 3000,
+      });
+      return;
+      
+    }
     this.payment.username=this.username;
     this.paymentService.save(this.payment).subscribe(data=>{
       this.payment=data;
-      Swal.fire("Good job!", "Your payment is Successfull!", "success");
-      this.router.navigate(['user-dashboard'])
+      
     })
+    Swal.fire("Good job!", "Your payment is Successfull!", "success");
+      this.router.navigate(['user-dashboard'])
 
   }
 

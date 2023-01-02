@@ -26,15 +26,55 @@ export class SignupComponent implements OnInit {
 
   formSubmit() {
     console.log(this.user);
+
+    if (this.user.firstName == '' || this.user.firstName == null) {
+      this.snack.open('Firstname is required !! ', '', {
+        duration: 1000,
+      });
+      return; 
+    }
+    if (this.user.lastName == '' || this.user.lastName == null) {
+      this.snack.open('Lastname is required !! ', '', {
+        duration: 1000,
+      });
+      return;
+      
+    }
     if (this.user.username == '' || this.user.username == null) {
-      alert('User is required !!');
+      // alert('User is required !!');
+      this.snack.open('Username is required !! ', '', {
+        duration: 1000,
+      });
+      return;
+      
+    }
+    if (this.user.phone == '' || this.user.phone == null) {
+      this.snack.open('Phone is required !! ', '', {
+        duration: 1000,
+      });
+      return;
+    }
+    if (this.user.email == '' || this.user.email == null) {
+      this.snack.open('Email is required !! ', '', {
+        duration: 1000,
+      });
+      return;
+      
       
     }
 
     if (this.user.password == '' || this.user.password == null) {
-      alert('User is required !!');
-      
+      this.snack.open('Password is required !! ', '', {
+        duration: 1000,
+      });
+      return;
     }
+      
+    // }
+    
+    
+   
+   
 
     //validate
 
@@ -51,7 +91,10 @@ export class SignupComponent implements OnInit {
       (error) => {
         //error
         console.log(error);
-        alert('something went wrong');
+        // alert('something went wrong');
+        this.snack.open(error.error.text, '', {
+          duration: 3000,
+        });
         
       }
     );
@@ -59,3 +102,4 @@ export class SignupComponent implements OnInit {
 
 
 }
+

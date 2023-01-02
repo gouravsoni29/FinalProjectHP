@@ -9,7 +9,7 @@
             <mat-tab label="Sign Up" class="registration-tab">
                 <mat-card-content>
 
-                    <form (ngSubmit)="formSubmit()">
+                    <form (ngSubmit)="formSubmit()" ngNativeValidate>
                         <mat-form-field>
                             <input matInput placeholder="First Name" required name="firstname"
                                 [(ngModel)]="user.firstName">

@@ -23,6 +23,7 @@ import { AddHotelComponent } from './pages/admin/add-hotel/add-hotel.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
 import { BookHistoryComponent } from './pages/user/book-history/book-history.component';
 import { PaymentHistoryComponent } from './pages/user/payment-history/payment-history.component';
+import { HotelFeedComponent } from './pages/hotel-feed/hotel-feed.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'view-hotel/:id', component: ViewHotelComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'bookhotel/:id', component: BookhotelsComponent },
+ 
   
   {
     path: 'admin', component: DashboardComponent, canActivate: [AdminGuard],
@@ -81,7 +83,8 @@ const routes: Routes = [
       },
       {
         path:'pay-history',component:PaymentHistoryComponent
-      }
+      },
+      {path:'hotel-feed',component:HotelFeedComponent}
 
     ],
   },

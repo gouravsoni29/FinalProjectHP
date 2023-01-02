@@ -19,8 +19,8 @@ export class SidebarComponent implements OnInit {
 
   public logout() {
     this.login.logout();
-    this.router.navigate(['login'])
-    // window.location.reload();
+    // this.router.navigate(['login'])
+    window.location.reload();
     // this.login.loginStatusSubject.next(false);
   }
 

@@ -30,7 +30,7 @@ export class BookHistoryComponent implements OnInit {
     this.bookService.cancelBooking(id).subscribe(data=>{
       // this.book=data;
       console.log(data);
-      Swal.fire("Good job!", "Deleted Successfull!", "success");
+      Swal.fire("Good job!", "Cancelled Successfull!", "success");
       
       this.getHistory();
     })

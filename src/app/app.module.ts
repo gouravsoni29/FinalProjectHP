@@ -13,6 +13,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { MatMenuModule } from '@angular/material/menu';
 // import { MatIconModule } from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
@@ -49,6 +50,7 @@ import { AddHotelComponent } from './pages/admin/add-hotel/add-hotel.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
 import { BookHistoryComponent } from './pages/user/book-history/book-history.component';
 import { PaymentHistoryComponent } from './pages/user/payment-history/payment-history.component';
+import { HotelFeedComponent } from './pages/hotel-feed/hotel-feed.component';
 
 
 @NgModule({
@@ -81,7 +83,8 @@ import { PaymentHistoryComponent } from './pages/user/payment-history/payment-hi
         AddHotelComponent,
         UpdateProfileComponent,
         BookHistoryComponent,
-        PaymentHistoryComponent
+        PaymentHistoryComponent,
+        HotelFeedComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +104,8 @@ import { PaymentHistoryComponent } from './pages/user/payment-history/payment-hi
     MatMenuModule,
     MatListModule,
     MatDividerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

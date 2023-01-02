@@ -53,8 +53,8 @@
       </div>
     </mat-card-content>
     <mat-card-actions class="text-center">
-      <button (click)="updateuser(user.id)" mat-raised-button color="primary">UPDATE</button>
-      <button mat-raised-button color="info">DELETE</button>
+      <button (click)="updateuser(user.id)" mat-raised-button color="primary" *ngIf="user.authorities[0].authority=='NORMAL'">UPDATE</button>
+      
     </mat-card-actions>
   </mat-card>
   

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -13,32 +14,32 @@ export class LoginComponent implements OnInit {
     username: '',
     password: '',
   };
-  constructor(private login:LoginService,private router:Router) { }
+  constructor(private login:LoginService,private router:Router,private snack:MatSnackBar) { }
 
   ngOnInit(): void {
   }
   formSubmit() {
     console.log('login btn clicked');
 
-    // if (
-    //   this.loginData.username.trim() == '' ||
-    //   this.loginData.username == null
-    // ) {
-    //   this.snack.open('Username is required !! ', '', {
-    //     duration: 3000,
-    //   });
-    //   return;
-    // }
+    if (
+      this.loginData.username.trim() == '' ||
+      this.loginData.username == null
+    ) {
+      this.snack.open('Username is required !! ', '', {
+        duration: 2000,
+      });
+      return;
+    }
 
-    // if (
-    //   this.loginData.password.trim() == '' ||
-    //   this.loginData.password == null
-    // ) {
-    //   this.snack.open('Password is required !! ', '', {
-    //     duration: 3000,
-    //   });
-    //   return;
-    // }
+    if (
+      this.loginData.password.trim() == '' ||
+      this.loginData.password == null
+    ) {
+      this.snack.open('Password is required !! ', '', {
+        duration: 2000,
+      });
+      return;
+    }
 
     //request to server to generate token
     this.login.generateToken(this.loginData).subscribe(
@@ -72,6 +73,9 @@ export class LoginComponent implements OnInit {
       (error) => {
         console.log('Error !');
         console.log(error);
+        this.snack.open('Invalid Details !! Try again', '', {
+          duration: 3000,
+        });
        
       }
     );

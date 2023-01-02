@@ -4,7 +4,7 @@
     <figure></figure>
 
     <mat-card class="mat-elevation-z12">
-        <mat-card-title style="text-align:center;">SIGN IN</mat-card-title>
+        <mat-card-title style="text-align:center;"><b>SIGN IN</b></mat-card-title>
         <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
             <mat-tab label="Sign In">
                 <mat-card-content>
@@ -13,7 +13,7 @@
                         <mat-form-field>
                             <input matInput placeholder="User Name" name="username" required [(ngModel)]="loginData.username">
                             <!-- <mat-error *ngIf="email.invalid">Email is required</mat-error> -->
-                            <mat-icon matSuffix>email</mat-icon>
+                            <mat-icon matSuffix>perm_identity</mat-icon>
                         </mat-form-field>
                         <mat-form-field>
                             <input matInput placeholder="Password" [(ngModel)]="loginData.password" type="password" name="password"
@@ -21,7 +21,7 @@
                            
                             <mat-icon matSuffix>lock</mat-icon>
                         </mat-form-field>
-                        <mat-checkbox required>Remember Me!</mat-checkbox>
+                        <!-- <mat-checkbox required>Remember Me!</mat-checkbox> -->
                         <button mat-raised-button color="primary" class="login-button" type="submit">
                             Sign In
                         </button>

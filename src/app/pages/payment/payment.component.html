@@ -9,7 +9,7 @@
             <mat-tab label="Pay the Amount">
                 <mat-card-content>
 
-                    <form (ngSubmit)="doPayment()">
+                    <form (ngSubmit)="doPayment()" ngNativeValidate>
                         <mat-form-field>
                             <input matInput placeholder="Card No" name="Card No" required maxlength="16" minlength="16">
                             <mat-icon matSuffix>credit_card</mat-icon>
@@ -22,7 +22,7 @@
                             <input matInput placeholder="Date" type="date" [value]="currentD" name="date" required
                                 [(ngModel)]="payment.paymentDate">
                         </mat-form-field>
-                        <mat-checkbox required>Remember Me!</mat-checkbox>
+                        <!-- <mat-checkbox required>Remember Me!</mat-checkbox> -->
                         <button mat-raised-button color="primary" class="payment-button" type="submit">
                             Pay
                         </button>
